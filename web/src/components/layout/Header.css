@@ -1,0 +1,11 @@
+@media (max-width: 1000px) {
+  .header-navbar {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+  }
+
+  .header-navbar--open {
+    max-height: 300px;
+  }
+}

@@ -1,0 +1,59 @@
+import os
+import math
+import random
+import string
+from flask import Flask, request, Blueprint, Response, current_app, send_file, jsonify
+import requests
+import jsonpickle
+from model.carseat import *
+from api.common import *
+from datetime import datetime
+from api.carseat_import import *
+
+api_carseats = Blueprint('api_carseats', __name__)
+
+
+@api_carseats.route("/carseats", methods=["GET"])
+def api_carseats_get():    
+    carseats = Carseat.get_carseats()
+
+    json_str = jsonpickle.encode(carseats, unpicklable=False)
+
+    return Response(response=json_str, status=200, mimetype="application/json")
+
+
+@api_carseats.route("/carseats/<int:id_carseat>", methods=["GET"])
+def api_carseat_get(id_carseat):    
+    carseat = Carseat.get_carseats(id_carseat=id_carseat)[0]
+
+    json_str = jsonpickle.encode(carseat, unpicklable=False)
+
+    return Response(response=json_str, status=200, mimetype="application/json")
+
+
+@api_carseats.route("/carseats/import", methods=["POST"])
+def api_carseat_import_post():    
+    if "import" not in request.files:
+        return "missing import file"
+
+    file = request.files["import"]
+    
+    if file.filename == "":
+        return "missing import filename"
+        
+    if file:
+        filename = "tmp/import.csv"
+
+        if not os.path.exists("tmp"):
+            os.makedirs("tmp") 
+
+        if os.path.exists(filename):
+            os.remove(filename)
+
+        file.save(filename)
+
+        is_ok, message = import_csv_data(filename)
+        return message            
+
+    else:
+        return "error importing data"    

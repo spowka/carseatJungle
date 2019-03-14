@@ -1,0 +1,18 @@
+workshop:
+  image: node:alpine
+  volumes:
+    - ./:/usr/src/app
+    - ./tmp/artifacts:/artifacts
+  working_dir: /usr/src/app
+  environment:
+    - REACT_APP_API_HOST=http://initcarseatjungleapi-env.dq8igxkye2.us-east-2.elasticbeanstalk.com
+
+deployer:
+  image: codeship/aws-deployment
+  encrypted_env_file: aws-deployment.env.encrypted
+  environment:
+    - AWS_DEFAULT_REGION=us-east-2
+  volumes:
+    - ./:/usr/src/app
+    - ./tmp/artifacts:/artifacts
+  working_dir: /usr/src/app

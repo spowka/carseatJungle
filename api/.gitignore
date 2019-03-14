@@ -1,0 +1,13 @@
+# Compiled source #
+*.pyc
+
+# Python and Flask runtime directories and files  #
+__pycache__/
+flask_session/
+restart.txt
+
+# OS generated files #
+.DS_Store
+
+# VS Code config
+.vscode

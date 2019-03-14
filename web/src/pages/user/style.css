@@ -1,0 +1,10 @@
+.login-error-message {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 13px;
+  color: #dc3545;
+}

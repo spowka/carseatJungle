@@ -1,0 +1,140 @@
+.tableHeader {
+  text-align: right;
+  padding: 10px 29px;
+}
+
+.sidebar {
+  width: 250px;
+}
+
+a.sidebar-nav-link {
+  position: relative;
+  color: #fff;
+  text-decoration: none !important;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  font-weight: 500;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+
+a.sidebar-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+a.sidebar-nav-link.active {
+  background-color: #54abf0;
+}
+
+a.sidebar-nav-link.active:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 15px;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  border-color: transparent #fff transparent transparent;
+  border-width: 8px;
+  border-style: solid;
+}
+
+.ReactTable .rt-thead .rt-th {
+  text-align: left !important;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.ReactTable .rt-thead.-header {
+  background-color: #5a6268;
+  box-shadow: none;
+}
+
+.ReactTable .rt-thead.-filters .rt-th {
+  border-right: 1px solid rgba(0, 0, 0, 0.02);
+  background-color: #e5e5e5;
+  padding: 0.2rem;
+}
+
+.ReactTable .rt-thead.-filters input,
+.ReactTable .rt-thead.-filters select {
+  border-radius: 0px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.ReactTable .rt-thead.-filters input:focus,
+.ReactTable .rt-thead.-filters select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.ReactTable .-pagination {
+  box-shadow: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #e5e5e5;
+}
+
+.ReactTable .pagination-bottom .-pagination .-previous .-btn,
+.ReactTable .pagination-bottom .-pagination .-next .-btn {
+  width: 100px;
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  border-radius: 0.75rem;
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  height: auto;
+  margin-top: 6px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.ReactTable .pagination-bottom .-pagination .-previous .-btn {
+  margin-left: 3px;
+}
+
+.ReactTable .pagination-bottom .-pagination .-next .-btn {
+  float: right;
+  margin-right: 3px;
+}
+
+.modal-title {
+  width: 100%;
+}
+
+.modal-header-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input + label.carseat-image-holder {
+  width: 110px;
+  height: 110px;
+  display: block;
+  background-color: #f7f7f7;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+.file-input + label.carseat-image-holder .carseat-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

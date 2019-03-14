@@ -1,0 +1,14 @@
+- name: build website
+  service: workshop
+  tag: master
+  command: sh ./codeship/steps/build.sh 
+
+- name: deploy website
+  service: deployer
+  tag: master
+  command: sh ./codeship/steps/deploy.sh init-carseatjungle-app
+
+- name: deploy api
+  service: deployer
+  tag: master
+  command: codeship_aws eb_deploy ./api init-carseatjungle-api InitCarseatjungleApi-env elasticbeanstalk-us-east-2-350101120602  

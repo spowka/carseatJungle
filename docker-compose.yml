@@ -1,0 +1,30 @@
+version: '2.0'
+
+services:
+
+  api:
+    container_name: carseatjungle_api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    volumes:
+      - ./api:/app
+    ports:
+      - 5000:5000
+  #   environment:
+  #     POSTGRES_DATABASE_HOST: database
+  #     POSTGRES_DATABASE: carseatjungle
+  #     POSTGRES_USER: carseatjungle
+  #     POSTGRES_PASSWORD: test123
+
+  # database:
+  #   image: postgres
+  #   container_name: carseatjungle_db
+  #   volumes:
+  #     - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+  #   environment:
+  #     POSTGRES_DB: carseatjungle
+  #     POSTGRES_USER: carseatjungle
+  #     POSTGRES_PASSWORD: test123
+  #   ports:
+  #     - 5432:5432
